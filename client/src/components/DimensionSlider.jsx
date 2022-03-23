@@ -6,12 +6,7 @@ export default function DimensionSlider({ dimensions, handleChange }) {
   return (
     <div className="dimension-slider">
       <h2>Dimensions</h2>
-      <form
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <form>
         <label htmlFor="height">Height: {height}%</label>
         <input
           type="range"

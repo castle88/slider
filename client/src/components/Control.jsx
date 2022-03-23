@@ -1,11 +1,14 @@
 import ColorRange from "./ColorRange";
 import DimensionSlider from "./DimensionSlider";
 import BorderRadiusRange from "./BorderRadiusRange";
+import BoxShadowRange from "./BoxShadowRange";
 
 export default function Control({
   hsl,
   dimensions,
   borderRadius,
+  boxShadow,
+  handleBoxShadowChange,
   handleBorderColorChange,
   handleDimensionChange,
   handleBorderRadiusChange,
@@ -20,6 +23,10 @@ export default function Control({
       <DimensionSlider
         dimensions={dimensions}
         handleChange={handleDimensionChange}
+      />
+      <BoxShadowRange
+        boxShadow={boxShadow}
+        handleChange={handleBoxShadowChange}
       />
     </div>
   );

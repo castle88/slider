@@ -11,6 +11,13 @@ function App() {
     alpha: 0,
   });
 
+  const [boxShadow, setBoxShadow] = useState({
+    hOffset: 0,
+    vOffset: 0,
+    blur: 0,
+    spread: 0,
+  });
+
   const [dimensions, setDimensions] = useState({
     height: 1,
     width: 1,
@@ -37,6 +44,14 @@ function App() {
   const handleBorderRadiusChange = (e) => {
     setBorderRadius(e.target.value);
   };
+  const handleBoxShadowChange = (e) => {
+    setBoxShadow((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
 
   return (
     <div className="App">
@@ -45,9 +60,11 @@ function App() {
           hsl={hsl}
           dimensions={dimensions}
           borderRadius={borderRadius}
+          boxShadow={boxShadow}
           handleBorderColorChange={handleBorderColorChange}
           handleDimensionChange={handleDimensionChange}
           handleBorderRadiusChange={handleBorderRadiusChange}
+          handleBoxShadowChange={handleBoxShadowChange}
         />
       </div>
       <div className="display-container">
@@ -55,6 +72,7 @@ function App() {
           hsl={hsl}
           dimensions={dimensions}
           borderRadius={borderRadius}
+          boxShadow={boxShadow}
         />
       </div>
     </div>

@@ -4,7 +4,7 @@ export default function BorderRadiusRange({ borderRadius, handleChange }) {
   return (
     <div>
       <h2>Border Radius</h2>
-      <form style={{ display: "flex", flexDirection: "column" }}>
+      <form>
         <label htmlFor="borderRadius">Border Radius: {borderRadius}%</label>
         <input
           type="range"
