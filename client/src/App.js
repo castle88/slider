@@ -1,5 +1,5 @@
 import MultiRangeSlider from "./components/MultiRangeSlider";
-import Range from "./components/Range";
+import ColorRange from "./components/ColorRange";
 import Control from "./components/Control";
 import Display from "./components/Display";
 import { useState } from "react";
@@ -11,7 +11,14 @@ function App() {
     third: 0,
   });
 
-  const handleChange = (e) => {
+  const [dimensions, setDimensions] = useState({
+    height: 1,
+    width: 1,
+  });
+
+  const [borderRadius, setBorderRadius] = useState(0);
+
+  const handleBorderColorChange = (e) => {
     setHsl((prev) => {
       return {
         ...prev,
@@ -19,13 +26,36 @@ function App() {
       };
     });
   };
+  const handleDimensionChange = (e) => {
+    setDimensions((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
+  const handleBorderRadiusChange = (e) => {
+    setBorderRadius(e.target.value);
+  };
+
   return (
     <div className="App">
       <div className="form-container">
-        <Control hsl={hsl} handleChange={handleChange} />
+        <Control
+          hsl={hsl}
+          dimensions={dimensions}
+          borderRadius={borderRadius}
+          handleBorderColorChange={handleBorderColorChange}
+          handleDimensionChange={handleDimensionChange}
+          handleBorderRadiusChange={handleBorderRadiusChange}
+        />
       </div>
       <div className="display-container">
-        <Display hsl={hsl} />
+        <Display
+          hsl={hsl}
+          dimensions={dimensions}
+          borderRadius={borderRadius}
+        />
       </div>
     </div>
   );

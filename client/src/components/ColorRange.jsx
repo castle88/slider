@@ -1,16 +1,18 @@
 import { useState } from "react";
 
-export default function Range({ hsl, handleChange }) {
+export default function ColorRange({ hsl, handleChange }) {
   const { first, second, third } = hsl;
 
   return (
-    <div>
+    <div className="border-color-range">
+      <h2>Border Color</h2>
       <form
         style={{
           display: "flex",
           flexDirection: "column",
         }}
       >
+        <label htmlFor="first">Hue:</label>
         <input
           type="range"
           min={0}
@@ -20,6 +22,8 @@ export default function Range({ hsl, handleChange }) {
           value={first}
           onChange={handleChange}
         />
+        <label htmlFor="second">Saturation:</label>
+
         <input
           style={{ margin: "10px 0" }}
           type="range"
@@ -30,6 +34,8 @@ export default function Range({ hsl, handleChange }) {
           value={second}
           onChange={handleChange}
         />
+        <label htmlFor="third">Lightness:</label>
+
         <input
           type="range"
           min={0}
