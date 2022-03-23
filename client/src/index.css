@@ -11,4 +11,18 @@ html {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+.form-container {
+  margin-bottom: 3rem;
+}
+.form-container,
+.display-container {
+  display: flex;
+  background: hsl(0, 0%, 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 6px 6px 6px 0 hsla(174, 88%, 7%, 0.836);
+  width: 100%;
 }
