@@ -34,3 +34,9 @@ html {
   justify-content: space-between;
   align-items: start;
 }
+h2 {
+  margin-bottom: 10px;
+}
+input {
+  margin: 10px 0;
+}
