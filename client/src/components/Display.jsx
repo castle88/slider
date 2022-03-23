@@ -1,15 +1,17 @@
 import React from "react";
 
-export default function Display({ hsl }) {
+export default function Display({ hsl, dimensions, borderRadius }) {
   const { first, second, third } = hsl;
+  const { height, width } = dimensions;
 
   return (
-    <div>
-      <div style={{ border: `10px solid hsl(${first} ${second}% ${third}%)` }}>
-        <h2>h {first}</h2>
-        <h2>s {second}</h2>
-        <h2>l {third}</h2>
-      </div>
-    </div>
+    <div
+      style={{
+        border: `10px solid hsl(${first} ${second}% ${third}%)`,
+        height: `${height}%`,
+        width: `${width}%`,
+        borderRadius: `${borderRadius}%`,
+      }}
+    ></div>
   );
 }

@@ -1,9 +1,26 @@
-import Range from "./Range";
+import ColorRange from "./ColorRange";
+import DimensionSlider from "./DimensionSlider";
+import BorderRadiusRange from "./BorderRadiusRange";
 
-export default function Control({ hsl, handleChange }) {
+export default function Control({
+  hsl,
+  dimensions,
+  borderRadius,
+  handleBorderColorChange,
+  handleDimensionChange,
+  handleBorderRadiusChange,
+}) {
   return (
-    <div>
-      <Range hsl={hsl} handleChange={handleChange} />
+    <div className="control">
+      <ColorRange hsl={hsl} handleChange={handleBorderColorChange} />
+      <BorderRadiusRange
+        borderRadius={borderRadius}
+        handleChange={handleBorderRadiusChange}
+      />
+      <DimensionSlider
+        dimensions={dimensions}
+        handleChange={handleDimensionChange}
+      />
     </div>
   );
 }
