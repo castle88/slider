@@ -6,12 +6,7 @@ export default function ColorRange({ hsl, handleChange }) {
   return (
     <div className="border-color-range">
       <h2>Border Color</h2>
-      <form
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <form>
         <label htmlFor="borderWidth">Width: {borderWidth}px</label>
         <input
           type="range"
