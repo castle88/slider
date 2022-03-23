@@ -14,7 +14,6 @@ export default function DimensionSlider({ dimensions, handleChange }) {
       >
         <label htmlFor="height">Height:</label>
         <input
-          style={{ margin: "10px 0" }}
           type="range"
           min={1}
           max={100}
@@ -25,7 +24,6 @@ export default function DimensionSlider({ dimensions, handleChange }) {
         />
         <label htmlFor="width">Width:</label>
         <input
-          style={{ margin: "10px 0" }}
           type="range"
           min={1}
           max={100}

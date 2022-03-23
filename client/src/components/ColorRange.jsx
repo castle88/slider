@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function ColorRange({ hsl, handleChange }) {
-  const { first, second, third } = hsl;
+  const { first, second, third, borderWidth } = hsl;
 
   return (
     <div className="border-color-range">
@@ -12,6 +12,16 @@ export default function ColorRange({ hsl, handleChange }) {
           flexDirection: "column",
         }}
       >
+        <label htmlFor="borderWidth">Width:</label>
+        <input
+          type="range"
+          min={0}
+          max={350}
+          step={1}
+          name="borderWidth"
+          value={borderWidth}
+          onChange={handleChange}
+        />
         <label htmlFor="first">Hue:</label>
         <input
           type="range"
@@ -25,7 +35,6 @@ export default function ColorRange({ hsl, handleChange }) {
         <label htmlFor="second">Saturation:</label>
 
         <input
-          style={{ margin: "10px 0" }}
           type="range"
           min={0}
           max={100}

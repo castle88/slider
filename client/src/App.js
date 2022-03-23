@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function App() {
   const [hsl, setHsl] = useState({
+    borderWidth: 0,
     first: 0,
     second: 0,
     third: 0,
