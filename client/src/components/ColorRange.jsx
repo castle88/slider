@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function ColorRange({ hsl, handleChange }) {
-  const { first, second, third, borderWidth } = hsl;
+  const { first, second, third, borderWidth, alpha } = hsl;
 
   return (
     <div className="border-color-range">
@@ -12,7 +12,7 @@ export default function ColorRange({ hsl, handleChange }) {
           flexDirection: "column",
         }}
       >
-        <label htmlFor="borderWidth">Width:</label>
+        <label htmlFor="borderWidth">Width: {borderWidth}px</label>
         <input
           type="range"
           min={0}
@@ -22,7 +22,7 @@ export default function ColorRange({ hsl, handleChange }) {
           value={borderWidth}
           onChange={handleChange}
         />
-        <label htmlFor="first">Hue:</label>
+        <label htmlFor="first">Hue: {first}</label>
         <input
           type="range"
           min={0}
@@ -32,7 +32,7 @@ export default function ColorRange({ hsl, handleChange }) {
           value={first}
           onChange={handleChange}
         />
-        <label htmlFor="second">Saturation:</label>
+        <label htmlFor="second">Saturation: {second}%</label>
 
         <input
           type="range"
@@ -43,7 +43,7 @@ export default function ColorRange({ hsl, handleChange }) {
           value={second}
           onChange={handleChange}
         />
-        <label htmlFor="third">Lightness:</label>
+        <label htmlFor="third">Lightness: {third}%</label>
 
         <input
           type="range"
@@ -52,6 +52,16 @@ export default function ColorRange({ hsl, handleChange }) {
           step={1}
           name="third"
           value={third}
+          onChange={handleChange}
+        />
+        <label htmlFor="alpha">Alpha: {alpha}%</label>
+        <input
+          type="range"
+          min={0}
+          max={100}
+          step={1}
+          name="alpha"
+          value={alpha}
           onChange={handleChange}
         />
       </form>

@@ -12,7 +12,7 @@ export default function DimensionSlider({ dimensions, handleChange }) {
           flexDirection: "column",
         }}
       >
-        <label htmlFor="height">Height:</label>
+        <label htmlFor="height">Height: {height}%</label>
         <input
           type="range"
           min={1}
@@ -22,7 +22,7 @@ export default function DimensionSlider({ dimensions, handleChange }) {
           value={height}
           onChange={handleChange}
         />
-        <label htmlFor="width">Width:</label>
+        <label htmlFor="width">Width: {width}%</label>
         <input
           type="range"
           min={1}

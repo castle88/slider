@@ -1,5 +1,3 @@
-import MultiRangeSlider from "./components/MultiRangeSlider";
-import ColorRange from "./components/ColorRange";
 import Control from "./components/Control";
 import Display from "./components/Display";
 import { useState } from "react";
@@ -10,6 +8,7 @@ function App() {
     first: 0,
     second: 0,
     third: 0,
+    alpha: 0,
   });
 
   const [dimensions, setDimensions] = useState({
