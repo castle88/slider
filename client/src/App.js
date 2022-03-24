@@ -8,6 +8,13 @@ function App() {
     first: 0,
     second: 0,
     third: 0,
+    bhAlpha: 0,
+  });
+
+  const [background, setBackground] = useState({
+    hue: 0,
+    saturation: 0,
+    lightness: 0,
     alpha: 0,
   });
 
@@ -52,6 +59,14 @@ function App() {
       };
     });
   };
+  const handleBackgroundChange = (e) => {
+    setBackground((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
 
   return (
     <div className="App">
@@ -61,6 +76,8 @@ function App() {
           dimensions={dimensions}
           borderRadius={borderRadius}
           boxShadow={boxShadow}
+          background={background}
+          handleBackgroundChange={handleBackgroundChange}
           handleBorderColorChange={handleBorderColorChange}
           handleDimensionChange={handleDimensionChange}
           handleBorderRadiusChange={handleBorderRadiusChange}
@@ -73,6 +90,7 @@ function App() {
           dimensions={dimensions}
           borderRadius={borderRadius}
           boxShadow={boxShadow}
+          background={background}
         />
       </div>
     </div>
