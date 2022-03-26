@@ -6,11 +6,13 @@ export default function Display({
   borderRadius,
   background,
   boxShadow,
+  shadowColor,
 }) {
   const { first, second, third, borderWidth, alpha } = hsl;
   const { height, width } = dimensions;
   const { hOffset, vOffset, blur, spread } = boxShadow;
   const { hue, saturation, lightness, bgAlpha } = background;
+  const { sHue, sSat, sLight, sAlpha } = shadowColor;
 
   return (
     <div
@@ -19,7 +21,7 @@ export default function Display({
         height: `${height}%`,
         width: `${width}%`,
         borderRadius: `${borderRadius}%`,
-        boxShadow: `${hOffset}px ${vOffset}px ${blur}px ${spread}px hsla(200, 100%, 50%, 1)`,
+        boxShadow: `${hOffset}px ${vOffset}px ${blur}px ${spread}px hsla(${sHue}, ${sSat}%, ${sLight}%, ${sAlpha}%)`,
         margin: "0 auto",
         backgroundColor: `hsla(${hue}, ${saturation}%, ${lightness}%, ${bgAlpha}%)`,
       }}

@@ -8,14 +8,20 @@ function App() {
     first: 0,
     second: 0,
     third: 0,
-    bhAlpha: 0,
+    alpha: 0,
+  });
+  const [shadowColor, setShadowColor] = useState({
+    sHue: 0,
+    sSat: 0,
+    sLight: 0,
+    sAlpha: 0,
   });
 
   const [background, setBackground] = useState({
     hue: 0,
     saturation: 0,
     lightness: 0,
-    alpha: 0,
+    bgAlpha: 0,
   });
 
   const [boxShadow, setBoxShadow] = useState({
@@ -67,6 +73,14 @@ function App() {
       };
     });
   };
+  const handleShadowColorChange = (e) => {
+    setShadowColor((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
 
   return (
     <div className="App">
@@ -77,6 +91,8 @@ function App() {
           borderRadius={borderRadius}
           boxShadow={boxShadow}
           background={background}
+          shadowColor={shadowColor}
+          handleShadowColorChange={handleShadowColorChange}
           handleBackgroundChange={handleBackgroundChange}
           handleBorderColorChange={handleBorderColorChange}
           handleDimensionChange={handleDimensionChange}
@@ -91,6 +107,7 @@ function App() {
           borderRadius={borderRadius}
           boxShadow={boxShadow}
           background={background}
+          shadowColor={shadowColor}
         />
       </div>
     </div>
